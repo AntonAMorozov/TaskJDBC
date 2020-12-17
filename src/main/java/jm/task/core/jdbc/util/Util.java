@@ -13,10 +13,8 @@ public class Util {
     public Connection getdbConnection() {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(dbURL, dbUser, dbPass);
-            //System.out.println("Connection OK");
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return connection;
